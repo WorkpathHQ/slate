@@ -20,7 +20,7 @@ curl https://<your-company>.workpath.com/api/v1/<endpoint>
 
 > Make sure to replace `<your-api-token>` with your API token.
 
-The Workpath API uses tokens to grant access. A guide how to create an API Client and API Token can be found in the [Workpath Help Center](https://workpath.zendesk.com/hc/en-us/search?utf8=%E2%9C%93&query=api).
+The Workpath API uses tokens to grant access. A guide how to create an API Client and API Token can be found in the [Workpath Help Center](https://workpath.zendesk.com/hc/en-us/articles/360023684614-Public-API).
 
 When creating an API Client you have to specify a Workpath user whos access rights will be used when requesting the API. Attributes that are not accessible for this user will be returned as `null`.
 
