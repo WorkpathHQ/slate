@@ -13,7 +13,7 @@ curl https://<your-company>.workpath.com/api/v1/goals?query=become&start_date=20
 {
   "goals": [
     {
-      "description": "",
+      "description": null,
       "id": 1,
       "kind": "organization",
       "last_status_update_at": "2019-04-26T17:11:16Z",
@@ -22,11 +22,12 @@ curl https://<your-company>.workpath.com/api/v1/goals?query=become&start_date=20
       "start_date": "2019-04-01",
       "status": 9,
       "target_date": "2019-06-30",
+      "team": null,
       "team_id": null,
       "title": "Become a recognized key player in our industry"
     },
     {
-      "description": "",
+      "description": null,
       "id": 6,
       "kind": "team",
       "last_status_update_at": "2019-04-26T17:11:14Z",
@@ -35,6 +36,7 @@ curl https://<your-company>.workpath.com/api/v1/goals?query=become&start_date=20
       "start_date": "2019-04-01",
       "status": 10,
       "target_date": "2019-06-30",
+      "team": "Marketing",
       "team_id": 4,
       "title": "Become a well-known and admired social media brand"
     }
@@ -75,44 +77,53 @@ curl https://<your-company>.workpath.com/api/v1/goals/1
 
 ```json
 {
-    "description": "",
-    "draft": false,
-    "goal_children_ids": [2, 3],
-    "goal_parents_ids": [],
-    "id": 1,
-    "initiatives": [],
-    "kind": "organization",
-    "last_status_update_at": "2019-06-27T12:01:54Z",
-    "owner": "Bernd Miksch",
-    "progress": 0.83,
-    "progress_calculation": "key_results",
-    "labels": [
-      "Strategic Initiative 1"
-    ],
-    "key_results": [
-      {
-        "currency": null,
-        "current_value": 10,
-        "description": null,
-        "id": 1,
-        "last_status_update_at": null,
-        "milestones": [],
-        "owner": null,
-        "owner_team": null,
-        "progress": 1,
-        "start_value": 7,
-        "status": 10,
-        "target_value": 10,
-        "title": "Generate 10% of our revenues through recommendations",
-        "type": "percental"
-      }
-    ],
-    "start_date": "2019-04-01",
-    "status": 9,
-    "secret": false,
-    "target_date": "2019-06-30",
-    "team": null,
-    "title": "Become a recognized key player in our industry"
+  "description": null,
+  "draft": false,
+  "goal_children_ids": [2, 3],
+  "goal_parents_ids": [],
+  "id": 1,
+  "initiatives": [
+    {
+      "description": null,
+      "id": 1,
+      "last_status_update_at": "2019-06-28T10:39:29Z",
+      "owner": "Bernd Miksch",
+      "status": "in_progress",
+      "title": "Raise brand awareness among target group"
+    }
+  ],
+  "key_results": [
+    {
+      "currency": null,
+      "current_value": 10,
+      "description": null,
+      "id": 1,
+      "last_status_update_at": null,
+      "milestones": [],
+      "owner": null,
+      "owner_team": null,
+      "progress": 1,
+      "start_value": 7,
+      "status": 10,
+      "target_value": 10,
+      "title": "Generate 10% of our revenues through recommendations",
+      "type": "percental"
+    }
+  ],
+  "kind": "organization",
+  "last_status_update_at": "2019-06-27T12:01:54Z",
+  "owner": "Bernd Miksch",
+  "progress": 0.83,
+  "progress_calculation": "key_results",
+  "labels": [
+    "Strategic Initiative 1"
+  ],
+  "start_date": "2019-04-01",
+  "status": 9,
+  "secret": false,
+  "target_date": "2019-06-30",
+  "team": null,
+  "title": "Become a recognized key player in our industry"
 }
 ```
 
