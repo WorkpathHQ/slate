@@ -239,6 +239,9 @@
                   <li>
                     <a href="#get-goals" class="toc-h2 toc-link" data-title="Get Goals">Get Goals</a>
                   </li>
+                  <li>
+                    <a href="#get-goal-details" class="toc-h2 toc-link" data-title="Get Goal Details">Get Goal Details</a>
+                  </li>
               </ul>
           </li>
       </ul>
@@ -386,7 +389,7 @@ Make sure to set the following headers with every request:</p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"goals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organization"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"last_status_update_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-26T17:11:16Z"</span><span class="p">,</span><span class="w">
@@ -395,11 +398,12 @@ Make sure to set the following headers with every request:</p>
       </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-01"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
       </span><span class="s2">"target_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-30"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"team"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"team_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Become a recognized key player in our industry"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
       </span><span class="s2">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"team"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"last_status_update_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-26T17:11:14Z"</span><span class="p">,</span><span class="w">
@@ -408,6 +412,7 @@ Make sure to set the following headers with every request:</p>
       </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-01"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
       </span><span class="s2">"target_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-30"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"team"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Marketing"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"team_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
       </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Become a well-known and admired social media brand"</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -461,6 +466,79 @@ Make sure to set the following headers with every request:</p>
 <td>integer</td>
 <td>optional</td>
 <td>number of a specific page. First page will be returned when omitted or out of range</td>
+</tr>
+</tbody></table>
+<h2 id='get-goal-details'>Get Goal Details</h2><pre class="highlight shell tab-shell"><code>curl https://&lt;your-company&gt;.workpath.com/api/v1/goals/1
+  -H <span class="s2">"Authorization: Token &lt;your-api-token&gt;"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:<br>Status: 200 OK<br>Content-Type: application/json</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"draft"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"goal_children_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">],</span><span class="w">
+  </span><span class="s2">"goal_parents_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"initiatives"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"last_status_update_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-28T10:39:29Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bernd Miksch"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"in_progress"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Raise brand awareness among target group"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"key_results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"current_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"last_status_update_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"milestones"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="s2">"owner"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"owner_team"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"progress"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"start_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"target_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Generate 10% of our revenues through recommendations"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"percental"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organization"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_status_update_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-27T12:01:54Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bernd Miksch"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"progress"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.83</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"progress_calculation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"key_results"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"labels"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"Strategic Initiative 1"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-01"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"secret"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"target_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-30"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"team"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Become a recognized key player in our industry"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://&lt;your-company&gt;.workpath.com/api/v1/goals/&lt;goal-id&gt;</code></p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Need</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>goal_id</code></td>
+<td>integer</td>
+<td>required in path</td>
+<td><code>id</code> of the <code>goal</code> to show details for</td>
 </tr>
 </tbody></table>
 
