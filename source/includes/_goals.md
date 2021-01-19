@@ -13,6 +13,7 @@ curl https://<your-company>.workpath.com/api/v1/goals?query=become&start_date=20
 {
   "goals": [
     {
+      "confidence_level": 9,
       "description": null,
       "id": 1,
       "kind": "organization",
@@ -20,13 +21,13 @@ curl https://<your-company>.workpath.com/api/v1/goals?query=become&start_date=20
       "owner": "Bernd Miksch",
       "progress": 0.83,
       "start_date": "2019-04-01",
-      "status": 9,
       "target_date": "2019-06-30",
       "team": null,
       "team_id": null,
       "title": "Become a recognized key player in our industry"
     },
     {
+      "confidence_level": 10,
       "description": null,
       "id": 6,
       "kind": "team",
@@ -34,7 +35,6 @@ curl https://<your-company>.workpath.com/api/v1/goals?query=become&start_date=20
       "owner": "Elena Wischer",
       "progress": 0.19,
       "start_date": "2019-04-01",
-      "status": 10,
       "target_date": "2019-06-30",
       "team": "Marketing",
       "team_id": 4,
@@ -77,6 +77,7 @@ curl https://<your-company>.workpath.com/api/v1/goals/1
 
 ```json
 {
+  "confidence_level": 9,
   "description": null,
   "draft": false,
   "goal_children_ids": [2, 3],
@@ -94,6 +95,7 @@ curl https://<your-company>.workpath.com/api/v1/goals/1
   ],
   "key_results": [
     {
+      "confidence_level": 10,
       "currency": null,
       "current_value": 10,
       "description": null,
@@ -104,7 +106,6 @@ curl https://<your-company>.workpath.com/api/v1/goals/1
       "owner_team": null,
       "progress": 1,
       "start_value": 7,
-      "status": 10,
       "target_value": 10,
       "title": "Generate 10% of our revenues through recommendations",
       "type": "percental"
@@ -119,7 +120,6 @@ curl https://<your-company>.workpath.com/api/v1/goals/1
     "Strategic Initiative 1"
   ],
   "start_date": "2019-04-01",
-  "status": 9,
   "secret": false,
   "target_date": "2019-06-30",
   "team": null,
