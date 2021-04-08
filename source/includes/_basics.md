@@ -7,8 +7,6 @@ Welcome to the Workpath API documentation. This API can be used to build custom 
 
 The current API version is `v1`. It is available at `https://<your-company>.workpath.com/api/v1`.
 
-If you don't know `<your-company>` subdomain, you can <a href="https://www.workpath.com/en/retrieve-account" target="_blank">retrieve it with your Workpath user email address</a>.
-
 # Authentication
 
 > Authentication example:
